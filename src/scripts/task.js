@@ -1,20 +1,8 @@
-class Task{
-	
-	constructor(worker_script, isShared=false){
-		this.script = worker_script;
-		this.shared =  isShared;
-	}
+var Task = function(id, isFuture){
+	this.id = typeof id !== 'undefined' ? id : "default-id";
+	this.id = typeof isFuture !== 'undefined' ? isFuture : false;
+}
 
-	//execute method for task excution.
-	function execute(){
-
-	}
-
-	function getScript(){
-		return this.script;
-	}
-
-	function isShared(){
-		return this.shared;
-	}
+Task.prototype.execute = function(){
+	//Override this section in base class.
 }
